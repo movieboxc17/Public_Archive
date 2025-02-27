@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Archive</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-archive"></i>
+            <h1>Public Archive</h1>
+        </div>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search archives...">
+            <button id="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <h2>Archives</h2>
+            <ul id="archive-sources">
+                <!-- Archive sources will be loaded dynamically -->
+            </ul>
+            <h2>Filters</h2>
+            <div class="filter-section">
+                <h3>Date Range</h3>
+                <div class="date-filter">
+                    <label for="date-from">From:</label>
+                    <input type="date" id="date-from">
+                    <label for="date-to">To:</label>
+                    <input type="date" id="date-to">
+                </div>
+                <h3>Categories</h3>
+                <div id="categories-filter">
+                    <!-- Categories will be loaded dynamically -->
+                </div>
+                <button id="apply-filters">Apply Filters</button>
+                <button id="reset-filters">Reset</button>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="controls">
+                <div class="view-toggle">
+                    <button id="grid-view" class="active"><i class="fas fa-th"></i> Grid</button>
+                    <button id="list-view"><i class="fas fa-list"></i> List</button>
+                </div>
+                <div class="sort-options">
+                    <label for="sort-select">Sort by:</label>
+                    <select id="sort-select">
+                        <option value="date-desc">Date (Newest)</option>
+                        <option value="date-asc">Date (Oldest)</option>
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="archive-items grid-view" id="archive-items">
+                <!-- Archive items will be loaded dynamically -->
+            </div>
+
+            <div class="pagination">
+                <button id="prev-page" disabled><i class="fas fa-chevron-left"></i> Previous</button>
+                <span id="page-indicator">Page 1 of 1</span>
+                <button id="next-page">Next <i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </main>
+
+    <div id="item-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-item-content">
+                <!-- Modal content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 Public Archive. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
